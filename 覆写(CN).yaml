@@ -1,0 +1,80 @@
++rules:
+  - GEOSITE,javdb,节点选择
+
+# 🧪 测速 / IP检测
+  - DOMAIN-SUFFIX,ipinfo.io,节点选择
+  - DOMAIN-SUFFIX,speedtest.net,节点选择
+  - DOMAIN-SUFFIX,ipburger.com,节点选择
+  - DOMAIN-SUFFIX,ipjiance.com,节点选择
+  - DOMAIN-SUFFIX,whoer.net,节点选择
+  - DOMAIN-SUFFIX,ping0.cc,节点选择
+
+# 🌐 代理 / 节点相关
+  - DOMAIN-SUFFIX,novproxy.com,节点选择
+  - DOMAIN-SUFFIX,madou.club,节点选择
+  - DOMAIN-SUFFIX,cliproxy.com,节点选择
+  - DOMAIN-SUFFIX,vmiss.com,节点选择
+  - DOMAIN-SUFFIX,zproxy.org,节点选择
+  - DOMAIN-SUFFIX,idcflare.com,节点选择
+
+# 💻 社区 / 论坛
+  - DOMAIN-SUFFIX,nodeseek.com,节点选择
+  - DOMAIN-SUFFIX,hostloc.com,节点选择
+  - DOMAIN-SUFFIX,v2ex.com,节点选择
+  - DOMAIN-SUFFIX,linux.do,节点选择
+
+# 🧰 工具 / 资源
+  - DOMAIN-SUFFIX,emeditor.org,节点选择
+  - DOMAIN-SUFFIX,gitbook.io,节点选择
+  - DOMAIN-SUFFIX,logiconsole.com,节点选择
+  - DOMAIN-SUFFIX,flaticon.com,节点选择
+  - DOMAIN-SUFFIX,freepik.com,节点选择
+  - DOMAIN-SUFFIX,chromehub.dev,节点选择
+
+# 🤖 AI / X.ai
+  - DOMAIN-SUFFIX,grok.com,节点选择
+  - DOMAIN-SUFFIX,accounts.x.ai,节点选择
+  - DOMAIN-SUFFIX,grokipedia.com,节点选择
+  - DOMAIN-SUFFIX,auth.x.ai,节点选择
+  - DOMAIN-SUFFIX,imagine-public.x.ai,节点选择
+
+# 💰 金融
+  - DOMAIN-SUFFIX,binance.com,节点选择
+
+# 🌍 内容 / 资讯
+  - DOMAIN-SUFFIX,pcgamer.com,节点选择
+  - DOMAIN-SUFFIX,vox.com,节点选择
+  - DOMAIN-SUFFIX,scribd.com,节点选择
+
+# 🧩 数据服务
+  - DOMAIN-SUFFIX,gravatar.com,节点选择
+  - DOMAIN-SUFFIX,clearbit.com,节点选择
+
+# 🔞 成人内容
+  - DOMAIN-SUFFIX,pornhub.com,节点选择
+  - DOMAIN-SUFFIX,missav.ws,节点选择
+  - DOMAIN-SUFFIX,himepai.com,节点选择
+  - DOMAIN-SUFFIX,wallmama.com,节点选择
+  - DOMAIN-SUFFIX,madou.club,节点选择
+
+  - DOMAIN-SUFFIX,51cg1.com,节点选择
+  - DOMAIN-SUFFIX,dplayer.diygod.dev,节点选择
+  - DOMAIN-SUFFIX,hls.debiqc.cn,节点选择
+  - DOMAIN-SUFFIX,hls.xayzbw.cn,节点选择
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
