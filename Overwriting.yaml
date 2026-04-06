@@ -49,6 +49,7 @@
 # 🧩 数据服务
   - DOMAIN-SUFFIX,gravatar.com,节点选择
   - DOMAIN-SUFFIX,clearbit.com,节点选择
+  - DOMAIN-SUFFIX,onedrive.live.com,节点选择  
 
 # 🔞 Adult content
   - DOMAIN-SUFFIX,pornhub.com,节点选择
