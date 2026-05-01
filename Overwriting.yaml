@@ -51,7 +51,8 @@
 # 🧩 数据服务
   - DOMAIN-SUFFIX,gravatar.com,节点选择
   - DOMAIN-SUFFIX,clearbit.com,节点选择
-  - DOMAIN-SUFFIX,onedrive.live.com,节点选择  
+  - DOMAIN-SUFFIX,onedrive.live.com,节点选择 
+  - DOMAIN-SUFFIX,abgox.com,节点选择
 
 # 🔞 Adult content
   - DOMAIN-SUFFIX,pornhub.com,节点选择
@@ -71,9 +72,9 @@
   - DOMAIN-SUFFIX,u3c3.com,节点选择
   - DOMAIN-SUFFIX,51md.me,节点选择
   - DOMAIN-SUFFIX,hls.byhmwg.cn,节点选择
-
-
-
+  - DOMAIN-SUFFIX,hls.wbyxqo.cn,DIRECT
+  - DOMAIN-SUFFIX,hls.pirpbv.cn,节点选择
+  - DOMAIN-SUFFIX,hls.isihiq.cn,节点选择
 
 
 
