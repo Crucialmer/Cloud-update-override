@@ -10,9 +10,6 @@
   - DOMAIN-SUFFIX,ping0.cc,节点选择
 
 # 🌐 代理 / 节点相关
-  - DOMAIN-SUFFIX,novproxy.com,节点选择
-  - DOMAIN-SUFFIX,madou.club,节点选择
-  - DOMAIN-SUFFIX,cliproxy.com,节点选择
   - DOMAIN-SUFFIX,vmiss.com,节点选择
   - DOMAIN-SUFFIX,zproxy.org,节点选择
   - DOMAIN-SUFFIX,idcflare.com,节点选择
