@@ -10,9 +10,15 @@
   - DOMAIN-SUFFIX,ping0.cc,节点选择
 
 # 🌐 代理 / 节点相关
+  - DOMAIN-SUFFIX,novproxy.com,节点选择
+  - DOMAIN-SUFFIX,madou.club,节点选择
+  - DOMAIN-SUFFIX,cliproxy.com,节点选择
   - DOMAIN-SUFFIX,vmiss.com,节点选择
   - DOMAIN-SUFFIX,zproxy.org,节点选择
   - DOMAIN-SUFFIX,idcflare.com,节点选择
+  - DOMAIN-SUFFIX,hero-sms.com,节点选择
+  - DOMAIN-SUFFIX,outlook.live.com,节点选择
+
 
 # 💻 社区 / 论坛
   - DOMAIN-SUFFIX,nodeseek.com,节点选择
@@ -54,6 +60,8 @@
   - DOMAIN-SUFFIX,clearbit.com,节点选择
   - DOMAIN-SUFFIX,onedrive.live.com,节点选择 
   - DOMAIN-SUFFIX,abgox.com,节点选择
+  - DOMAIN-SUFFIX,zh.z-library.sk,节点选择
+  
 
 # 🔞 Adult content
   - DOMAIN-SUFFIX,pornhub.com,节点选择
@@ -81,7 +89,8 @@
   - DOMAIN-SUFFIX,jav.directory,节点选择
   - DOMAIN-SUFFIX,hls.ddmdrp.cn,节点选择
   - DOMAIN-SUFFIX,njavtv.com,节点选择
-
-
+  - DOMAIN-SUFFIX,51md.ws,节点选择
+  - DOMAIN-SUFFIX,mdbdy.com,节点选择
+  - DOMAIN-SUFFIX,t33.cdn2020.com,节点选择
 
 
