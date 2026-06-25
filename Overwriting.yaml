@@ -1,7 +1,6 @@
 +rules:
   - GEOSITE,javdb,节点选择
   - GEOSITE,steam,节点选择
-  - GEOSITE,porn,节点选择
   - GEOSITE,speedtest,节点选择
   - GEOSITE,binance,节点选择
 
@@ -74,12 +73,14 @@
   - DOMAIN-SUFFIX,hls.wbyxqo.cn,DIRECT
   - DOMAIN-SUFFIX,hls.xayzbw.cn,节点选择
   - DOMAIN-SUFFIX,jav.directory,节点选择
+  - DOMAIN-SUFFIX,javdb.com,节点选择
   - DOMAIN-SUFFIX,madou.club,节点选择
   - DOMAIN-SUFFIX,madou.io,节点选择
   - DOMAIN-SUFFIX,madouqu.com,节点选择
   - DOMAIN-SUFFIX,mdbdy.com,节点选择
   - DOMAIN-SUFFIX,missav.ws,节点选择
   - DOMAIN-SUFFIX,njavtv.com,节点选择
+  - DOMAIN-SUFFIX,pornhub.com,节点选择
   - DOMAIN-SUFFIX,sakurajav.com,节点选择
   - DOMAIN-SUFFIX,t33.cdn2020.com,节点选择
   - DOMAIN-SUFFIX,u3c3.com,节点选择
