@@ -43,6 +43,7 @@
   - DOMAIN-SUFFIX,grok.com,节点选择
   - DOMAIN-SUFFIX,grokipedia.com,节点选择
   - DOMAIN-SUFFIX,imagine-public.x.ai,节点选择
+  - DOMAIN-SUFFIX,search.brave.com,节点选择  
 
 # 💰 金融
   - DOMAIN-SUFFIX,yeka.ai,节点选择
