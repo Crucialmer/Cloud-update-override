@@ -1,4 +1,12 @@
 +rules:
+  # ==================== 广告拦截（必须放最前面） ====================
+  - GEOSITE,category-ads-all,REJECT
+  - RULE-SET,AdLite,REJECT
+  - RULE-SET,EasyList,REJECT
+  - RULE-SET,EasyListChina,REJECT
+  - RULE-SET,ProgramAD,REJECT
+  
+
   - GEOSITE,javdb,节点选择
   - GEOSITE,steam,节点选择
   - GEOSITE,speedtest,节点选择
