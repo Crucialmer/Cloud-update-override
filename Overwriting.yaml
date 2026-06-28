@@ -12,9 +12,7 @@
   - GEOSITE,speedtest,节点选择
   - GEOSITE,binance,节点选择
 
-  - DOMAIN-SUFFIX,microsoft.com,节点选择
-  
-
+ 
 # 🧪 测速 / IP检测
   - DOMAIN-SUFFIX,ipburger.com,节点选择
   - DOMAIN-SUFFIX,ipinfo.io,节点选择
