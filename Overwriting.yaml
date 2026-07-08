@@ -23,7 +23,7 @@
   - RULE-SET,ProgramAD,REJECT
 
   #-----------------------------------------------------------
-  - DOMAIN-SUFFIX,r.jina.ai,节点选择
+  - DOMAIN-SUFFIX,jina.ai,节点选择
   
 
 
