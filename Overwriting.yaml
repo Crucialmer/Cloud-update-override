@@ -25,7 +25,7 @@
   #-----------------------------------------------------------
   - DOMAIN-SUFFIX,jina.ai,节点选择
   - DOMAIN-SUFFIX,discord.gg,节点选择 
-
+  - DOMAIN-SUFFIX,pypi.org,节点选择 
 
 
   
