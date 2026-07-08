@@ -21,6 +21,13 @@
   - RULE-SET,EasyList,REJECT
   - RULE-SET,EasyListChina,REJECT
   - RULE-SET,ProgramAD,REJECT
+
+  #-----------------------------------------------------------
+  - DOMAIN-SUFFIX,r.jina.ai,节点选择
+  
+
+
+
   
 
   - GEOSITE,javdb,节点选择
