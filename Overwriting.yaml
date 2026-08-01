@@ -54,6 +54,22 @@
   - DOMAIN-SUFFIX,inference-api.nousresearch.com,节点选择
   - DOMAIN-SUFFIX,nousresearch.com,节点选择
 
+  # —— GitHub 主站与 API ——
+  DOMAIN-SUFFIX,github.com,节点选择
+  DOMAIN-SUFFIX,api.github.com,节点选择
+  DOMAIN-SUFFIX,raw.githubusercontent.com,节点选择
+  DOMAIN-SUFFIX,codeload.github.com,节点选择
+  DOMAIN-SUFFIX,gist.github.com,节点选择
+
+  # —— GitHub release 资产 CDN(2024年底新增,最容易漏)——
+  DOMAIN-SUFFIX,release-assets.githubusercontent.com,节点选择
+  DOMAIN-SUFFIX,objects.githubusercontent.com,节点选择
+  DOMAIN-SUFFIX,githubusercontent.com,节点选择
+
+
+
+  
+
   # ==================== 🐙 GitHub 生态 (安装/更新/克隆必需) ====================
   - DOMAIN-SUFFIX,github.com,节点选择
   - DOMAIN-SUFFIX,githubassets.com,节点选择
