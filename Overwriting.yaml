@@ -30,6 +30,8 @@
 
   # ==================== 广告拦截（必须放最前面） ====================
   - GEOSITE,category-ads-all,REJECT
+  - RULE-SET,AntiAD,REJECT
+  - RULE-SET,AWAvenueAD,REJECT  
   - RULE-SET,AdLite,REJECT
   - RULE-SET,EasyList,REJECT
   - RULE-SET,EasyListChina,REJECT
