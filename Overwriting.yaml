@@ -14,28 +14,11 @@
 # ===================================================================
 
 
-# Windows 聚焦 - 走代理
-  - DOMAIN-SUFFIX,arc.msn.com,节点选择
-  - DOMAIN-SUFFIX,fd.api.iris.microsoft.com,节点选择
-  - DOMAIN-SUFFIX,assets.msn.com,节点选择
-  - DOMAIN-SUFFIX,api.msn.com,节点选择
-  - DOMAIN-SUFFIX,ntp.msn.com,节点选择
-  - DOMAIN-SUFFIX,msn.com,节点选择
-  - DOMAIN-SUFFIX,g.live.com,节点选择
-  - DOMAIN-SUFFIX,login.live.com,节点选择
-  - DOMAIN-SUFFIX,account.live.com,节点选择
-  - DOMAIN-SUFFIX,settings-win.data.microsoft.com,节点选择
-  - DOMAIN-SUFFIX,vortex.data.microsoft.com,节点选择
-  - DOMAIN-SUFFIX,displaycatalog.mp.microsoft.com,节点选择
-
   # ==================== 广告拦截（必须放最前面） ====================
   - GEOSITE,category-ads-all,REJECT
   - RULE-SET,AntiAD,REJECT
   - RULE-SET,AWAvenueAD,REJECT  
   - RULE-SET,AdLite,REJECT
-  - RULE-SET,EasyList,REJECT
-  - RULE-SET,EasyListChina,REJECT
-  - RULE-SET,ProgramAD,REJECT
 
   #-----------------------------------------------------------
   - DOMAIN-SUFFIX,jina.ai,节点选择
