@@ -1,5 +1,7 @@
 +rules:
 
+  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+
 # ===================================================================
 #  Hermes Agent 代理规则 — mihimo (Clash Meta) 规则格式
 #  生成日期: 2026-07-24
