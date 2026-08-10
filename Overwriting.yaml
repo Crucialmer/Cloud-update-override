@@ -1,11 +1,12 @@
 +rules:
 
 # ===================================================================
-#  Hermes Agent 代理规则 — mihimo (Clash Meta) 优化版
-#  基于 Hermes Agent 全链路组件分析 (优化冗余并补充最新 AI 生态)
+#  Hermes Agent 代理规则 — mihimo (Clash Meta) 终极完整版
+#  生成日期: 2026-08-10
+#  包含: Hermes 全链路 / 隐蔽编译依赖 / 云端存储 / AI 开发生态 / 常用工具
 # ===================================================================
 
-  # ==================== 广告拦截（必须放最前面） ====================
+  # ==================== 🛡️ 广告拦截（必须放最前面） ====================
   - GEOSITE,category-ads-all,REJECT
   - RULE-SET,AntiAD,REJECT
   - RULE-SET,AWAvenueAD,REJECT  
@@ -20,13 +21,12 @@
   - DOMAIN-SUFFIX,drawboard.com,节点选择
 
   # ==================== 🐙 GitHub 生态 (安装/更新/克隆必需) ====================
-  # DOMAIN-SUFFIX 包含所有子域名(api/raw/objects/release-assets等无需重复添加)
   - DOMAIN-SUFFIX,github.com,节点选择
   - DOMAIN-SUFFIX,githubassets.com,节点选择
   - DOMAIN-SUFFIX,githubusercontent.com,节点选择
   - DOMAIN-SUFFIX,github.io,节点选择
   - DOMAIN-SUFFIX,git-scm.com,节点选择
-  - DOMAIN-SUFFIX,ghcr.io,节点选择 # 补充: GitHub Container Registry
+  - DOMAIN-SUFFIX,ghcr.io,节点选择         # GitHub Container Registry
 
   # ==================== 🐍 Python / uv 工具链 ====================
   - DOMAIN-SUFFIX,astral.sh,节点选择
@@ -34,19 +34,31 @@
   - DOMAIN-SUFFIX,python-build-standalone,节点选择
   - DOMAIN-SUFFIX,pythonhosted.org,节点选择
   - DOMAIN-SUFFIX,pypi.org,节点选择 
-  - DOMAIN-SUFFIX,pypi.io,节点选择 # 补充: PyPI 备用分发域名
+  - DOMAIN-SUFFIX,pypi.io,节点选择         # PyPI 备用分发域名
 
-  # ==================== 📦 npm / Node.js (桌面版构建必需) ====================
+  # ==================== 🦀 底层编译依赖 (防止 pip/依赖安装假死) ====================
+  - DOMAIN-SUFFIX,crates.io,节点选择       # Rust 包管理器
+  - DOMAIN-SUFFIX,rust-lang.org,节点选择   # Rust 官方
+  - DOMAIN-SUFFIX,cmake.org,节点选择       # C++ 编译工具
+
+  # ==================== 📦 npm / Node.js 工具链 ====================
   - DOMAIN-SUFFIX,npmjs.com,节点选择
   - DOMAIN-SUFFIX,npmjs.org,节点选择
   - DOMAIN-SUFFIX,nodejs.org,节点选择
   - DOMAIN-SUFFIX,npmmirror.com,节点选择
   - DOMAIN-SUFFIX,electronjs.org,节点选择
   - DOMAIN-SUFFIX,playwright.azureedge.net,节点选择
-  - DOMAIN-SUFFIX,yarnpkg.com,节点选择 # 补充: Yarn
-  - DOMAIN-SUFFIX,pnpm.io,节点选择 # 补充: PNPM
+  - DOMAIN-SUFFIX,yarnpkg.com,节点选择     # Yarn
+  - DOMAIN-SUFFIX,pnpm.io,节点选择         # PNPM
 
-  # ==================== 🤖 AI 模型 API (国际线路) ====================
+  # ==================== 🧠 核心 AI 框架与开发工具 IDE ====================
+  - DOMAIN-SUFFIX,langchain.com,节点选择
+  - DOMAIN-SUFFIX,wandb.ai,节点选择        # Weights & Biases 模型监控
+  - DOMAIN-SUFFIX,cursor.com,节点选择      # Cursor AI 编辑器
+  - DOMAIN-SUFFIX,cursor.sh,节点选择
+  - DOMAIN-SUFFIX,perplexity.ai,节点选择
+
+  # ==================== 🤖 主流 AI 模型 API (国际线路) ====================
   - DOMAIN-SUFFIX,openai.com,节点选择
   - DOMAIN-SUFFIX,anthropic.com,节点选择
   - DOMAIN-SUFFIX,openrouter.ai,节点选择
@@ -60,12 +72,15 @@
   - DOMAIN-SUFFIX,x.ai,节点选择
   - DOMAIN-SUFFIX,grok.com,节点选择
   - DOMAIN-SUFFIX,gmi-serving.com,节点选择
-  # 补充: 其他常用 AI 与开源托管提供商
   - DOMAIN-SUFFIX,together.xyz,节点选择
   - DOMAIN-SUFFIX,replicate.com,节点选择
-  - DOMAIN-SUFFIX,perplexity.ai,节点选择
   - DOMAIN-SUFFIX,deepinfra.com,节点选择
+  - DOMAIN-SUFFIX,cohere.com,节点选择      # RAG/重排常用模型
+
+  # ==================== 🗄️ 向量数据库 / RAG 生态 ====================
   - DOMAIN-SUFFIX,pinecone.io,节点选择
+  - DOMAIN-SUFFIX,weaviate.io,节点选择
+  - DOMAIN-SUFFIX,qdrant.tech,节点选择
 
   # ==================== 🔍 Web 搜索 / 提取后端 ====================
   - DOMAIN-SUFFIX,firecrawl.dev,节点选择
@@ -77,20 +92,28 @@
   - DOMAIN-SUFFIX,browserbase.com,节点选择
   - DOMAIN-SUFFIX,browser-use.com,节点选择
 
-  # ==================== 🎨 图像生成 / TTS 后端 ====================
+  # ==================== 🎨 图像 / 音频生成服务 ====================
   - DOMAIN-SUFFIX,fal.ai,节点选择
   - DOMAIN-SUFFIX,fal.media,节点选择
   - DOMAIN-SUFFIX,elevenlabs.io,节点选择
+  - DOMAIN-SUFFIX,stability.ai,节点选择    # Stable Diffusion
+  - DOMAIN-SUFFIX,midjourney.com,节点选择  # Midjourney
+  - DOMAIN-SUFFIX,suno.com,节点选择        # Suno AI
 
-  # ==================== 🗄️ 基础存储设施 ====================
+  # ==================== ☁️ 云存储与 Serverless 托管兜底 ====================
   - DOMAIN-SUFFIX,storage.googleapis.com,节点选择
+  - DOMAIN-SUFFIX,amazonaws.com,节点选择   # AWS S3 存储 (覆盖极广)
+  - DOMAIN-SUFFIX,vercel.app,节点选择      # Vercel 托管
+  - DOMAIN-SUFFIX,netlify.app,节点选择     # Netlify 托管
+  - DOMAIN-SUFFIX,pages.dev,节点选择       # Cloudflare Pages
+  - DOMAIN-SUFFIX,r2.dev,节点选择          # Cloudflare R2 存储
 
   # ==================== 🤗 HuggingFace ====================
   - DOMAIN-SUFFIX,huggingface.co,节点选择
   - DOMAIN-SUFFIX,hf.co,节点选择
-  - DOMAIN-SUFFIX,hf.space,节点选择 # 补充: HF Spaces 服务
+  - DOMAIN-SUFFIX,hf.space,节点选择        # HF Spaces 托管服务
 
-  # ==================== 🛠️ 开发工具 / 文档 ====================
+  # ==================== 🛠️ 开发日常 / 文档 / 知识库 ====================
   - DOMAIN-SUFFIX,stackoverflow.com,节点选择
   - DOMAIN-SUFFIX,stackexchange.com,节点选择
   - DOMAIN-SUFFIX,sstatic.net,节点选择
@@ -103,7 +126,7 @@
   - DOMAIN-SUFFIX,journals.sagepub.com,节点选择 
   - DOMAIN-SUFFIX,ipme.ru,节点选择 
 
-  # ==================== 🌐 通用规则/直连与其他 ====================
+  # ==================== 🌐 通用规则 / 测速 / 社区 / 资源 ====================
   - GEOSITE,javdb,节点选择
   - GEOSITE,steam,节点选择
   - GEOSITE,speedtest,节点选择
@@ -117,7 +140,7 @@
   - DOMAIN-SUFFIX,ping0.cc,节点选择
   - DOMAIN-SUFFIX,whoer.net,节点选择
 
-  # 🌐 代理 / 节点相关
+  # 🌐 代理服务商 / 节点相关
   - DOMAIN-SUFFIX,bandwagonhost.com,节点选择
   - DOMAIN-SUFFIX,cliproxy.com,节点选择
   - DOMAIN-SUFFIX,hero-sms.com,节点选择
