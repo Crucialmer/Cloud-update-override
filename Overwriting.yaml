@@ -1,20 +1,9 @@
 +rules:
 
-  - AND,(NETWORK,UDP),(DST-PORT,443),REJECT
-
 # ===================================================================
-#  Hermes Agent 代理规则 — mihimo (Clash Meta) 规则格式
-#  生成日期: 2026-07-24
-#  基于 Hermes Agent v0.14-0.16 全链路组件分析
-#  共 13 个分类，覆盖安装 / 更新 / AI 推理 / 工具网关 / 浏览器 / 图像生成全链路
+#  Hermes Agent 代理规则 — mihimo (Clash Meta) 优化版
+#  基于 Hermes Agent 全链路组件分析 (优化冗余并补充最新 AI 生态)
 # ===================================================================
-#  使用说明:
-#   1. 复制下方规则到你现有的 mihimo 配置 rules: 段中
-#   2. 建议放在「自定义规则区域」、兜底 MATCH 规则之前
-#   3. 策略组名 "节点选择" 与你的现有规则保持一致
-#   4. 国内可直接访问的域名(DeepSeek/飞书/钉钉等)已列在文末，无需加入
-# ===================================================================
-
 
   # ==================== 广告拦截（必须放最前面） ====================
   - GEOSITE,category-ads-all,REJECT
@@ -22,104 +11,84 @@
   - RULE-SET,AWAvenueAD,REJECT  
   - RULE-SET,AdLite,REJECT
 
-  #-----------------------------------------------------------
-  - DOMAIN-SUFFIX,jina.ai,节点选择
+  # ==================== 🔵 Hermes Agent 核心 (Nous Research) ====================
+  - DOMAIN-SUFFIX,nousresearch.com,节点选择
   - DOMAIN-SUFFIX,discord.gg,节点选择 
-  - DOMAIN-SUFFIX,pypi.org,节点选择 
-  - DOMAIN-SUFFIX,files.pythonhosted.org,节点选择 
-  - DOMAIN-SUFFIX,pypi.python.org,节点选择 
-  - DOMAIN-SUFFIX,journals.sagepub.com,节点选择 
-  - DOMAIN-SUFFIX,ipme.ru,节点选择 
+  - DOMAIN-SUFFIX,jina.ai,节点选择
   - DOMAIN-SUFFIX,airalo.com,节点选择
   - DOMAIN-SUFFIX,nomadesim.com,节点选择
   - DOMAIN-SUFFIX,drawboard.com,节点选择
 
-  # ==================== 🔵 Hermes Agent 核心 (Nous Research) ====================
-  - DOMAIN-SUFFIX,hermes-agent.nousresearch.com,节点选择
-  - DOMAIN-SUFFIX,hermes-assets.nousresearch.com,节点选择
-  - DOMAIN-SUFFIX,portal.nousresearch.com,节点选择
-  - DOMAIN-SUFFIX,inference-api.nousresearch.com,节点选择
-  - DOMAIN-SUFFIX,nousresearch.com,节点选择
-
-  # —— GitHub 主站与 API ——
-  - DOMAIN-SUFFIX,github.com,节点选择
-  - DOMAIN-SUFFIX,api.github.com,节点选择
-  - DOMAIN-SUFFIX,raw.githubusercontent.com,节点选择
-  - DOMAIN-SUFFIX,codeload.github.com,节点选择
-  - DOMAIN-SUFFIX,gist.github.com,节点选择
-
-  # —— GitHub release 资产 CDN(2024年底新增,最容易漏)——
-  - DOMAIN-SUFFIX,release-assets.githubusercontent.com,节点选择
-  - DOMAIN-SUFFIX,objects.githubusercontent.com,节点选择
-  - DOMAIN-SUFFIX,githubusercontent.com,节点选择
-
-
-
-  
-
   # ==================== 🐙 GitHub 生态 (安装/更新/克隆必需) ====================
+  # DOMAIN-SUFFIX 包含所有子域名(api/raw/objects/release-assets等无需重复添加)
   - DOMAIN-SUFFIX,github.com,节点选择
   - DOMAIN-SUFFIX,githubassets.com,节点选择
   - DOMAIN-SUFFIX,githubusercontent.com,节点选择
-  - DOMAIN-SUFFIX,raw.githubusercontent.com,节点选择
-  - DOMAIN-SUFFIX,objects.githubusercontent.com,节点选择
   - DOMAIN-SUFFIX,github.io,节点选择
   - DOMAIN-SUFFIX,git-scm.com,节点选择
+  - DOMAIN-SUFFIX,ghcr.io,节点选择 # 补充: GitHub Container Registry
 
   # ==================== 🐍 Python / uv 工具链 ====================
   - DOMAIN-SUFFIX,astral.sh,节点选择
   - DOMAIN-SUFFIX,python.org,节点选择
   - DOMAIN-SUFFIX,python-build-standalone,节点选择
   - DOMAIN-SUFFIX,pythonhosted.org,节点选择
+  - DOMAIN-SUFFIX,pypi.org,节点选择 
+  - DOMAIN-SUFFIX,pypi.io,节点选择 # 补充: PyPI 备用分发域名
 
   # ==================== 📦 npm / Node.js (桌面版构建必需) ====================
   - DOMAIN-SUFFIX,npmjs.com,节点选择
   - DOMAIN-SUFFIX,npmjs.org,节点选择
-  - DOMAIN-SUFFIX,registry.npmjs.org,节点选择
   - DOMAIN-SUFFIX,nodejs.org,节点选择
   - DOMAIN-SUFFIX,npmmirror.com,节点选择
   - DOMAIN-SUFFIX,electronjs.org,节点选择
   - DOMAIN-SUFFIX,playwright.azureedge.net,节点选择
+  - DOMAIN-SUFFIX,yarnpkg.com,节点选择 # 补充: Yarn
+  - DOMAIN-SUFFIX,pnpm.io,节点选择 # 补充: PNPM
 
   # ==================== 🤖 AI 模型 API (国际线路) ====================
-  - DOMAIN-SUFFIX,api.openai.com,节点选择
-  - DOMAIN-SUFFIX,api.anthropic.com,节点选择
+  - DOMAIN-SUFFIX,openai.com,节点选择
+  - DOMAIN-SUFFIX,anthropic.com,节点选择
   - DOMAIN-SUFFIX,openrouter.ai,节点选择
-  - DOMAIN-SUFFIX,api.fireworks.ai,节点选择
-  - DOMAIN-SUFFIX,api.groq.com,节点选择
+  - DOMAIN-SUFFIX,fireworks.ai,节点选择
+  - DOMAIN-SUFFIX,groq.com,节点选择
   - DOMAIN-SUFFIX,generativelanguage.googleapis.com,节点选择
-  - DOMAIN-SUFFIX,api.minimaxi.com,节点选择
-  - DOMAIN-SUFFIX,api.moonshot.ai,节点选择
-  - DOMAIN-SUFFIX,api.cerebras.ai,节点选择
-  - DOMAIN-SUFFIX,api.mistral.ai,节点选择
-  - DOMAIN-SUFFIX,api.x.ai,节点选择
-  - DOMAIN-SUFFIX,api.gmi-serving.com,节点选择
+  - DOMAIN-SUFFIX,minimaxi.com,节点选择
+  - DOMAIN-SUFFIX,moonshot.ai,节点选择
+  - DOMAIN-SUFFIX,cerebras.ai,节点选择
+  - DOMAIN-SUFFIX,mistral.ai,节点选择
+  - DOMAIN-SUFFIX,x.ai,节点选择
+  - DOMAIN-SUFFIX,grok.com,节点选择
+  - DOMAIN-SUFFIX,gmi-serving.com,节点选择
+  # 补充: 其他常用 AI 与开源托管提供商
+  - DOMAIN-SUFFIX,together.xyz,节点选择
+  - DOMAIN-SUFFIX,replicate.com,节点选择
+  - DOMAIN-SUFFIX,perplexity.ai,节点选择
+  - DOMAIN-SUFFIX,deepinfra.com,节点选择
+  - DOMAIN-SUFFIX,pinecone.io,节点选择
 
   # ==================== 🔍 Web 搜索 / 提取后端 ====================
-  - DOMAIN-SUFFIX,api.firecrawl.dev,节点选择
-  - DOMAIN-SUFFIX,api.exa.ai,节点选择
+  - DOMAIN-SUFFIX,firecrawl.dev,节点选择
   - DOMAIN-SUFFIX,exa.ai,节点选择
-  - DOMAIN-SUFFIX,api.tavily.com,节点选择
   - DOMAIN-SUFFIX,tavily.com,节点选择
-  - DOMAIN-SUFFIX,api.parallel.ai,节点选择
+  - DOMAIN-SUFFIX,parallel.ai,节点选择
 
   # ==================== 🌐 浏览器自动化后端 ====================
   - DOMAIN-SUFFIX,browserbase.com,节点选择
-  - DOMAIN-SUFFIX,api.browserbase.com,节点选择
   - DOMAIN-SUFFIX,browser-use.com,节点选择
 
   # ==================== 🎨 图像生成 / TTS 后端 ====================
   - DOMAIN-SUFFIX,fal.ai,节点选择
   - DOMAIN-SUFFIX,fal.media,节点选择
-  - DOMAIN-SUFFIX,api.elevenlabs.io,节点选择
+  - DOMAIN-SUFFIX,elevenlabs.io,节点选择
 
-  # ==================== 🗄️ Google Storage (Chromium 构建 / FAL 回源) ====================
+  # ==================== 🗄️ 基础存储设施 ====================
   - DOMAIN-SUFFIX,storage.googleapis.com,节点选择
 
   # ==================== 🤗 HuggingFace ====================
   - DOMAIN-SUFFIX,huggingface.co,节点选择
   - DOMAIN-SUFFIX,hf.co,节点选择
-  - DOMAIN-SUFFIX,cdn-lfs.huggingface.co,节点选择
+  - DOMAIN-SUFFIX,hf.space,节点选择 # 补充: HF Spaces 服务
 
   # ==================== 🛠️ 开发工具 / 文档 ====================
   - DOMAIN-SUFFIX,stackoverflow.com,节点选择
@@ -131,21 +100,24 @@
   - DOMAIN-SUFFIX,wikipedia.org,节点选择
   - DOMAIN-SUFFIX,wikimedia.org,节点选择
   - DOMAIN-SUFFIX,reddit.com,节点选择
+  - DOMAIN-SUFFIX,journals.sagepub.com,节点选择 
+  - DOMAIN-SUFFIX,ipme.ru,节点选择 
 
+  # ==================== 🌐 通用规则/直连与其他 ====================
   - GEOSITE,javdb,节点选择
   - GEOSITE,steam,节点选择
   - GEOSITE,speedtest,节点选择
   - GEOSITE,binance,节点选择
   - GEOSITE,duckduckgo,节点选择
 
-# 🧪 测速 / IP检测
+  # 🧪 测速 / IP检测
   - DOMAIN-SUFFIX,ipburger.com,节点选择
   - DOMAIN-SUFFIX,ipinfo.io,节点选择
   - DOMAIN-SUFFIX,ipjiance.com,节点选择
   - DOMAIN-SUFFIX,ping0.cc,节点选择
   - DOMAIN-SUFFIX,whoer.net,节点选择
 
-# 🌐 代理 / 节点相关
+  # 🌐 代理 / 节点相关
   - DOMAIN-SUFFIX,bandwagonhost.com,节点选择
   - DOMAIN-SUFFIX,cliproxy.com,节点选择
   - DOMAIN-SUFFIX,hero-sms.com,节点选择
@@ -154,14 +126,14 @@
   - DOMAIN-SUFFIX,vmiss.com,节点选择
   - DOMAIN-SUFFIX,zproxy.org,节点选择
 
-# 💻 社区 / 论坛
+  # 💻 社区 / 论坛
   - DOMAIN-SUFFIX,hostloc.com,节点选择
   - DOMAIN-SUFFIX,linux.do,节点选择
   - DOMAIN-SUFFIX,nodeseek.com,节点选择
   - DOMAIN-SUFFIX,pincong.rocks,节点选择
   - DOMAIN-SUFFIX,v2ex.com,节点选择
 
-# 🧰 工具 / 资源
+  # 🧰 工具 / 资源
   - DOMAIN-SUFFIX,chromehub.dev,节点选择
   - DOMAIN-SUFFIX,emeditor.org,节点选择
   - DOMAIN-SUFFIX,endenot.com,节点选择
@@ -171,30 +143,23 @@
   - DOMAIN-SUFFIX,immersivetranslate.com,节点选择
   - DOMAIN-SUFFIX,ippure.com,节点选择
   - DOMAIN-SUFFIX,logiconsole.com,节点选择
-
-# 🤖 AI / X.ai
-  - DOMAIN-SUFFIX,accounts.x.ai,节点选择
-  - DOMAIN-SUFFIX,auth.x.ai,节点选择
   - DOMAIN-SUFFIX,brave.com,节点选择
-  - DOMAIN-SUFFIX,grok.com,节点选择
-  - DOMAIN-SUFFIX,grokipedia.com,节点选择
-  - DOMAIN-SUFFIX,imagine-public.x.ai,节点选择
 
-# 💰 金融
+  # 💰 金融
   - DOMAIN-SUFFIX,yeka.ai,节点选择
 
-# 🌍 内容 / 资讯
+  # 🌍 内容 / 资讯
   - DOMAIN-SUFFIX,pcgamer.com,节点选择
   - DOMAIN-SUFFIX,scribd.com,节点选择
   - DOMAIN-SUFFIX,vox.com,节点选择
 
-# 🧩 数据服务
+  # 🧩 数据服务
   - DOMAIN-SUFFIX,abgox.com,节点选择
   - DOMAIN-SUFFIX,clearbit.com,节点选择
   - DOMAIN-SUFFIX,gravatar.com,节点选择
   - DOMAIN-SUFFIX,zh.z-library.sk,节点选择
 
-# 🔞 Adult content
+  # 🔞 Adult content
   - DOMAIN-SUFFIX,51cg1.com,节点选择
   - DOMAIN-SUFFIX,51md.me,节点选择
   - DOMAIN-SUFFIX,51md.ws,节点选择
@@ -223,78 +188,3 @@
   - DOMAIN-SUFFIX,u3c3.com,节点选择
   - DOMAIN-SUFFIX,wallmama.com,节点选择
   - DOMAIN-SUFFIX,xiaoyakankan.com,节点选择
-
-
-# ===================================================================
-#  ⚠️ 以下为中国大陆可直接访问的域名 —— 不需要走代理，请勿添加
-# ===================================================================
-#
-#  DeepSeek:        api.deepseek.com, platform.deepseek.com
-#  Kimi/Moonshot:   api.moonshot.cn, api.kimi.com
-#  Alibaba/Qwen:    dashscope.aliyuncs.com, dashscope-intl.aliyuncs.com
-#  ZhipuAI/GLM:     open.bigmodel.cn, api.z.ai
-#  MiniMax CN:      api.minimax.chat
-#  Qwen Portal:     portal.qwen.ai
-#  飞书/Feishu:     open.feishu.cn, *.feishu.cn
-#  钉钉/DingTalk:   api.dingtalk.com, oapi.dingtalk.com
-#  企业微信/WeCom:  qyapi.weixin.qq.com
-#  微信/Weixin:     ilinkai.weixin.qq.com
-#  QQ Bot:          api.sgroup.qq.com, q.qq.com
-#  npm 国内镜像:    registry.npmmirror.com (备用，一般直连更快)
-#
-# ===================================================================
-#  📌 关键故障场景速查（✅=已加入代理规则  ⬜=国内直连无需代理）
-# ===================================================================
-#
-#  症状                                    根因域名                      代理规则?  状态
-#  ──────────────────────────────────────  ────────────────────────────  ────────  ────
-#  install.ps1 下载失败                    raw.githubusercontent.com      ✅ 已加    已解决
-#  install.sh 下载失败                     hermes-agent.nousresearch.com  ✅ 已加    已解决
-#  git clone 超时                          github.com                    ✅ 已加    已解决
-#  uv 安装器下载失败                       astral.sh                     ✅ 已加    已解决
-#  Python 依赖安装慢/失败                  pypi.org/files.pythonhosted    ✅ 已有    已解决
-#  Node.js 二进制下载失败                  nodejs.org                    ✅ 已加    已解决
-#  npm install 失败                        registry.npmjs.org            ✅ 已加    已解决
-#  Electron 下载 ~114MB 卡死               github.com/electron/releases  ✅ 已加    已解决
-#  Electron 备用镜像不可用                 npmmirror.com                  ✅ 已加    已解决
-#  Playwright Chromium 下载失败            playwright.azureedge.net       ✅ 已加    已解决
-#  "Build desktop app" 卡住                github.com (Electron)         ✅ 已加    已解决
-#  "Update complete" 后桌面崩溃            github.com (Electron)         ✅ 已加    已解决
-#  OpenAI API 超时/403                     api.openai.com                ✅ 已加    已解决
-#  Anthropic API 超时/403                  api.anthropic.com             ✅ 已加    已解决
-#  OpenRouter API 不可用                   openrouter.ai                 ✅ 已加    已解决
-#  Groq API 不可用                         api.groq.com                  ✅ 已加    已解决
-#  Gemini API 不可用                       generativelanguage.googleapis ✅ 已加    已解决
-#  Fireworks AI 不可用                     api.fireworks.ai              ✅ 已加    已解决
-#  Cerebras API 不可用                     api.cerebras.ai               ✅ 已加    已解决
-#  Mistral API 不可用                      api.mistral.ai                ✅ 已加    已解决
-#  xAI/Grok API 不可用                     api.x.ai                      ✅ 已加    已解决
-#  MiniMax 国际版不可用                    api.minimaxi.com              ✅ 已加    已解决
-#  Kimi 国际版 API 不可用                  api.moonshot.ai               ✅ 已加    已解决
-#  GMI Cloud API 不可用                    api.gmi-serving.com           ✅ 已加    已解决
-#  DeepSeek API 不可用                     api.deepseek.com              ⬜ 直连    无需代理
-#  Kimi CN API 不可用                      api.moonshot.cn               ⬜ 直连    无需代理
-#  DashScope/Qwen API 不可用               dashscope.aliyuncs.com        ⬜ 直连    无需代理
-#  ZhipuAI/GLM API 不可用                  open.bigmodel.cn              ⬜ 直连    无需代理
-#  web_search 无结果                       api.firecrawl.dev             ✅ 已加    已解决
-#  web_search (Tavily) 无结果              api.tavily.com                ✅ 已加    已解决
-#  web_search (Exa) 无结果                 api.exa.ai                    ✅ 已加    已解决
-#  web_search (Parallel) 无结果            api.parallel.ai               ✅ 已加    已解决
-#  browser_navigate 失败 (Browserbase)     api.browserbase.com           ✅ 已加    已解决
-#  browser_navigate 失败 (Browser Use)     browser-use.com               ✅ 已加    已解决
-#  FAL 图像生成失败                        fal.ai                        ✅ 已加    已解决
-#  FAL 生成图片无法显示                    fal.media                     ✅ 已加    已解决
-#  ElevenLabs TTS 失败                     api.elevenlabs.io             ✅ 已加    已解决
-#  Chromium 构建下载失败                   storage.googleapis.com        ✅ 已加    已解决
-#  HuggingFace 模型下载失败                huggingface.co                ✅ 已加    已解决
-#  HuggingFace LFS 下载失败                cdn-lfs.huggingface.co        ✅ 已加    已解决
-#  Nous Portal 登录超时                    portal.nousresearch.com       ✅ 已加    已解决
-#  Nous API 推理不可用                     inference-api.nousresearch.com✅ 已加    已解决
-#  Hermes 桌面安装包下载失败               hermes-assets.nousresearch.com✅ 已加    已解决
-#  Hermes 文档打不开                       hermes-agent.nousresearch.com ✅ 已加    已解决
-#  Stack Overflow 打不开                   stackoverflow.com             ✅ 已加    已解决
-#  Wikipedia 打不开                        wikipedia.org                 ✅ 已加    已解决
-#  Docker Hub 不可用                       docker.io/docker.com          ✅ 已加    已解决
-#  Reddit 打不开                           reddit.com                    ✅ 已加    已解决
-#
-# ===================================================================
