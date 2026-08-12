@@ -8,7 +8,7 @@
 
   # ==================== 🛡️ 广告拦截（必须放最前面） ====================
   - GEOSITE,category-ads-all,REJECT
-  - RULE-SET,AdLite,REJECT
+  - RULE-SET,AntiAD,REJECT        # 【改】原 RULE-SET,AdLite,REJECT → anti-AD
 
   # ==================== 🔵 Hermes Agent 核心 (Nous Research) ====================
   - DOMAIN-SUFFIX,nousresearch.com,节点选择
